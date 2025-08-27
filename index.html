@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MRM Trivia Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Welcome Screen -->
+    <div id="welcome-screen" class="screen active">
+        <div class="container">
+            <div class="logo">
+                <h1>MRM</h1>
+                <p>Trivia Challenge</p>
+            </div>
+            <div class="welcome-content">
+                <h2>Test Your Knowledge</h2>
+                <p>Answer 8 questions about MRM products and services</p>
+                <div class="features">
+                    <div class="feature">
+                        <i class="fas fa-clock"></i>
+                        <span>10 seconds per question</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-trophy"></i>
+                        <span>Win exciting prizes</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-star"></i>
+                        <span>Test your expertise</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-pause"></i>
+                        <span>Pause anytime for more time</span>
+                    </div>
+                </div>
+                <button id="start-btn" class="btn-primary">Start Game</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- KYC Form -->
+    <div id="kyc-screen" class="screen">
+        <div class="container">
+            <div class="header">
+                <h2>Quick Registration</h2>
+                <p>Please provide your details to participate</p>
+            </div>
+            <form id="kyc-form" class="kyc-form">
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <button type="submit" class="btn-primary">Continue to Game</button>
+            </form>
+            <div class="skip-section">
+                <p>Or</p>
+                <button id="skip-btn" class="btn-secondary">Skip Registration</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Screen -->
+    <div id="game-screen" class="screen">
+        <div class="container">
+            <div class="game-header">
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+                <div class="game-info">
+                    <div class="question-counter">
+                        <span id="current-question">1</span> / <span id="total-questions">8</span>
+                    </div>
+                    <div class="timer">
+                        <i class="fas fa-clock"></i>
+                        <span id="time-left">5</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="question-container">
+                <h3 id="question-text">Loading question...</h3>
+                <div class="options-container">
+                    <button class="option" data-index="0">
+                        <span class="option-text">Loading...</span>
+                    </button>
+                    <button class="option" data-index="1">
+                        <span class="option-text">Loading...</span>
+                    </button>
+                    <button class="option" data-index="2">
+                        <span class="option-text">Loading...</span>
+                    </button>
+                    <button class="option" data-index="3">
+                        <span class="option-text">Loading...</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Results Screen -->
+    <div id="results-screen" class="screen">
+        <div class="container results-container">
+            <div class="results-header">
+                <h2>Game Complete!</h2>
+                <div class="score-display">
+                    <div class="score-circle">
+                        <span id="final-score">0</span>
+                        <span class="score-label">/ 100</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="results-details">
+                <div class="result-stat">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Correct: <span id="correct-answers">0</span></span>
+                </div>
+                <div class="result-stat">
+                    <i class="fas fa-times-circle"></i>
+                    <span>Incorrect: <span id="incorrect-answers">0</span></span>
+                </div>
+                <div class="result-stat">
+                    <i class="fas fa-percentage"></i>
+                    <span>Accuracy: <span id="accuracy">0%</span></span>
+                </div>
+            </div>
+
+            <!-- Partner Showcase Section -->
+            <div class="partner-showcase">
+                <h3>Our Partners</h3>
+                <div class="showcase-container">
+                    <div class="showcase-image" id="showcase-image">
+                        <img src="images/1.png" alt="Partner" id="current-showcase">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Partner Banner -->
+            <div class="partner-banner">
+                <h3>Trusted Partners</h3>
+                <div class="banner-container">
+                    <div class="banner-scroll" id="banner-scroll">
+                        <!-- Images will be loaded dynamically -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button id="play-again-btn" class="btn-secondary">Play Again</button>
+                <button id="download-btn" class="btn-primary">
+                    <i class="fas fa-download"></i>
+                    Download Results
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confetti Container -->
+    <div id="confetti-container"></div>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
