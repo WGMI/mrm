@@ -5,7 +5,7 @@ let gameState = {
     correctAnswers: 0,
     incorrectAnswers: 0,
     totalQuestions: 0,
-    timeLeft: 10,
+    timeLeft: 20,
     timer: null,
     userData: null,
     selectedQuestions: [],
@@ -264,7 +264,7 @@ function loadQuestion() {
     
     // Reset timer display
     const timerElement = document.querySelector('.timer');
-    timerElement.innerHTML = '<i class="fas fa-clock"></i><span id="time-left">10</span>';
+    timerElement.innerHTML = '<i class="fas fa-clock"></i><span id="time-left">20</span>';
     
     // Add pause button if not already present
     if (!document.getElementById('pause-btn')) {
@@ -288,7 +288,7 @@ function loadQuestion() {
 }
 
 function startTimer() {
-    gameState.timeLeft = 10;
+    gameState.timeLeft = 20;
     gameState.isReadingExplanation = false;
     document.getElementById('time-left').textContent = gameState.timeLeft;
     
