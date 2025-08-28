@@ -161,7 +161,6 @@ function setupEventListeners() {
     
     // Results screen
     document.getElementById('play-again-btn').addEventListener('click', restartGame);
-    document.getElementById('download-btn').addEventListener('click', downloadResults);
     
     // Pause button (will be added dynamically)
     document.addEventListener('click', function(e) {
