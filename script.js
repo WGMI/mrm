@@ -45,7 +45,7 @@ const triviaQuestions = [
             "MRM products offer superior quality and have a warranty cover",
             "All of the above"
         ],
-        correct: [3],
+        correct: [2],
         explanation: "MRM products offer superior quality and have a warranty cover"
     },
     {
